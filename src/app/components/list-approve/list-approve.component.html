@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="list-approve.component.css">
+<div class="container">
+    <div class="d-flex justify-content between flex-wrap flex-md-nowarp align-times-center pt-3 pb-2 mb-3 border-bottom">
+        <h1>จัดการเอกสาร</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table1">
+            <thead>
+                <tr>
+
+                    <th scope="col">ID</th>
+                    <th scope="col">เรื่อง</th>
+                    <th scope="col">ภาคเรียน</th>
+                    <th scope="col">ปีการศึกษา</th>
+                    <th scope="col">ที่อยู่</th>
+                    <th scope="col">เบอร์โทรศัพท์</th>
+                    <th scope="col">วัตถุประสงค์</th>
+                    <th class="text-center" scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let book of Books; let i = index">
+                    <th scope="row">{{book._id}}</th>
+                    <td>{{book.story}}</td>
+                    <td>{{book.term}}</td>
+                    <td>{{book.year}}</td>
+                    <td>{{book.address}}</td>
+                    <td>{{book.tel}}</td>
+                    <td>{{book.description}}</td>
+                    <td class="text-center">
+                     
+                       
+                        
+                        <button class="button3 btn btn-sm btn-success"> Approve </button>
+                        <div class="button btn btn-sm btn-danger" > Reject </div>
+
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+</div>

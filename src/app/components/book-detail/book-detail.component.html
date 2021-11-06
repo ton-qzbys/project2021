@@ -1,0 +1,51 @@
+<div class="containner mt-3">
+    <h1>Edit</h1>
+    <div class="row justify-content center mt-3">
+        <div class="col-md-6">
+
+
+            <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+
+                <div class="form-group">
+                    <label for="story">เรื่อง</label>
+                    <input type="text" class="form-control" formControlName="story" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="term">ภาคเรียน</label> <br>
+                    <input type="radio" name="term-btn" value="ภาคฤดูร้อน" formControlName="term" required>ภาคฤดูร้อน<br>
+                    <input type="radio" name="term-btn" value="ภาคต้น" formControlName="term" required>ภาคต้น<br>
+                    <input type="radio" name="term-btn" value="ภาคปลาย"formControlName="term" required>ภาคปลาย<br>
+                    <br>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">ปีการศึกษา</label>
+                    <input type="text" class="form-control" formControlName="year" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">ที่อยู่</label>
+                    <input type="text" class="form-control" formControlName="address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">เบอร์โทรศัพท์</label>
+                    <input type="text" class="form-control" formControlName="tel" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">วัตถุประสงค์</label>
+                    <input type="text" class="form-control" formControlName="description" required>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Update</button>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
