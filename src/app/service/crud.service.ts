@@ -10,12 +10,14 @@ export class Book{
   description!: String;
 }
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class CrudService {
   // Node/Express API
   REST_API: String ='http://localhost:8000/api';
+  REST_APITeacher: String ='http://localhost:8000/apiT'; ///
 
   //Http header
   httpHeaders = new HttpHeaders().set('Content-Type','application/json')
@@ -25,6 +27,15 @@ export class CrudService {
     // Add
   AddBook(data:Book): Observable<any>{
     let API_URL = `${this.REST_API}/add-book`;
+    return this.httpClient.post(API_URL,data)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  // add to teacherDB
+  AddBook2(data:Book): Observable<any>{
+    let API_URL = `${this.REST_APITeacher}/books-list`;
     return this.httpClient.post(API_URL,data)
     .pipe(
       catchError(this.handleError)

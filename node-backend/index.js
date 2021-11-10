@@ -18,6 +18,7 @@ mongoose.connect(mongoDb.db, {
 })
 
 const bookRoute = require('./routes/book.routes')
+const teacherRoute = require('./routes/teacherDB.routes')
 
 const app = express();
 app.use(bodyParser.json());
@@ -36,6 +37,8 @@ app.get('/', (req, res) => {
 // API Root
 app.use('/api', bookRoute);
 
+// API Root Teacher
+app.use('/apiT', teacherRoute);
 
 
 // PORT 
